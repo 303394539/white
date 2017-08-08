@@ -1,0 +1,8 @@
+build/
+bower_components/
+spm_modules/
+node_modules/
+*.esproj
+*.DS_Store
+.idea/
+npm-debug.*
