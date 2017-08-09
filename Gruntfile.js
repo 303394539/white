@@ -15,10 +15,29 @@ module.exports = function(grunt) {
         watch: true
       }, webpackConfig)
     },
+
+    "webpack-dev-server": { //开发调试，实时编译
+      options: {
+        webpack: webpackConfig
+      },
+      start: {
+        keepalive: true,
+        port: 8000,
+        historyApiFallback: true,
+        noInfo: true,
+        inline: true,
+        hot: true,
+        compress: true,
+        watchOptions: {
+          aggregateTimeout: 300,
+          poll: 1000
+        }
+      }
+    }
   });
   grunt.loadNpmTasks('grunt-webpack');
 
   grunt.registerTask('default', [
-    'webpack:dev'
+    'webpack-dev-server'
   ]);
 }

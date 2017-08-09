@@ -1,3 +1,4 @@
-import Dom from './dom'
+class Core {
+}
 
-console.log(111)
+export default Core;
